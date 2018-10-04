@@ -49,9 +49,21 @@ function fish_prompt
   set -g __fish_git_prompt_showuntrackedfiles true
   set -g __fish_git_prompt_showstashstate true
   set -g __fish_git_prompt_show_informative_status true 
+  __fish_git_prompt_set_char __fish_git_prompt_char_cleanstate '✔ '
+  __fish_git_prompt_set_char __fish_git_prompt_char_dirtystate '* ' '✚ '
+  __fish_git_prompt_set_char __fish_git_prompt_char_invalidstate '# ' '✖ '
+  __fish_git_prompt_set_char __fish_git_prompt_char_stagedstate '+ ' '● '
+  __fish_git_prompt_set_char __fish_git_prompt_char_stashstate '$'
+  __fish_git_prompt_set_char __fish_git_prompt_char_stateseparator ' ' '|'
+  __fish_git_prompt_set_char __fish_git_prompt_char_untrackedfiles '%' '…'
+  __fish_git_prompt_set_char __fish_git_prompt_char_upstream_ahead '>' '↑'
+  __fish_git_prompt_set_char __fish_git_prompt_char_upstream_behind '<' '↓'
+  __fish_git_prompt_set_char __fish_git_prompt_char_upstream_diverged '<>'
+  __fish_git_prompt_set_char __fish_git_prompt_char_upstream_equal '='
+  __fish_git_prompt_set_char __fish_git_prompt_char_upstream_prefix ''
  
   # Line 1
-  echo -n $white'╭ '$hotpink$USER$white' @ '$limegreen(basename "$PWD")$turquoise
+  echo -n $white'╭ '$hotpink$USER$white'@'$limegreen(basename "$PWD")$turquoise
   __fish_git_prompt ":%s"
   echo
 
