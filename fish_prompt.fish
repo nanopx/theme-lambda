@@ -21,23 +21,23 @@ function fish_prompt
 #    turquoise="%F{81}"
 #    orange="%F{166}"
 #    purple="%F{135}"
-#    hotpink="%F{161}"
+#    magenta="%F{161}"
 #    limegreen="%F{118}"
 #else
 #    turquoise="%F{cyan}"
 #    orange="%F{yellow}"
 #    purple="%F{magenta}"
-#    hotpink="%F{red}"
+#    magenta="%F{red}"
 #    limegreen="%F{green}"
 #fi
   set -l normal (set_color normal)
-  set -l white (set_color FFFFFF)
-  set -l turquoise (set_color 5fdfff)
-  set -l orange (set_color df5f00)
-  set -l hotpink (set_color df005f)
+  set -l white (set_color white)
+  set -l cyan (set_color cyan)
+  set -l red (set_color red)
+  set -l magenta (set_color magenta)
   set -l blue (set_color blue)
-  set -l limegreen (set_color 87ff00)
-  set -l purple (set_color af5fff)
+  set -l limegreen (set_color green)
+  set -l yellow (set_color yellow)
  
   # Configure __fish_git_prompt
   set -g __fish_git_prompt_char_stateseparator ' '
@@ -51,7 +51,7 @@ function fish_prompt
   set -g __fish_git_prompt_show_informative_status true 
  
   # Line 1
-  echo -n $white'╭ '$hotpink$USER$white'@'$limegreen(basename "$PWD")$turquoise
+  echo -n $white'╭ '$magenta$USER$white'@'$limegreen(basename "$PWD")$cyan
   __fish_git_prompt ":%s"
   echo
 
@@ -59,7 +59,7 @@ function fish_prompt
   echo -n $white'╰'
   # support for virtual env name
   if set -q VIRTUAL_ENV
-      echo -n "($turquoise"(basename "$VIRTUAL_ENV")"$white)"
+      echo -n "($cyan"(basename "$VIRTUAL_ENV")"$white)"
   end
   echo -n $white' '$__fish_prompt_char $normal
 end
