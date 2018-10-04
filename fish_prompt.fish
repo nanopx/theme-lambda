@@ -51,8 +51,8 @@ function fish_prompt
   set -g __fish_git_prompt_show_informative_status true 
  
   # Line 1
-  echo -n $white'╭─'$hotpink$USER$white' at '$orange$__fish_prompt_hostname$white' in '$limegreen(pwd)$turquoise
-  __fish_git_prompt " (%s)"
+  echo -n $white'╭ '$hotpink$USER$white' @ '$limegreen(basename "$PWD")$turquoise
+  __fish_git_prompt ":%s"
   echo
 
   # Line 2
@@ -61,7 +61,7 @@ function fish_prompt
   if set -q VIRTUAL_ENV
       echo -n "($turquoise"(basename "$VIRTUAL_ENV")"$white)"
   end
-  echo -n $white'─'$__fish_prompt_char $normal
+  echo -n $white' '$__fish_prompt_char $normal
 end
 
 

@@ -20,13 +20,13 @@
 #### [Fisherman]
 
 ```fish
-fisher i lambda
+fisher i nanopx/theme-lambda
 ```
 
 ##### [Oh-My-Fish]
 
 ```fish
-omf install lambda
+omf install nanopx/theme-lambda
 ```
 
 [Fisherman]: https://github.com/fisherman/fisherman
