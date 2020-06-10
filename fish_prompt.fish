@@ -66,9 +66,9 @@ function fish_prompt
     set -l variable _$user_variable_name
     set -l variable_done "$variable"_done
 
-    if not set -q $variable
-      set -g $variable (set -q $user_variable_name; and echo $user_variable; or echo $char)
-    end
+    #if not set -q $variable
+    #  set -g $variable (set -q $user_variable_name; and echo $user_variable; or echo $char)
+    #end
   end
   
   # __fish_git_prompt_set_char __fish_git_prompt_char_cleanstate '✔'
